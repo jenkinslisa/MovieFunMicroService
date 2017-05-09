@@ -6,6 +6,8 @@ import com.amazonaws.services.s3.model.S3Object;
 import com.amazonaws.services.s3.model.S3ObjectInputStream;
 import com.amazonaws.util.IOUtils;
 import org.apache.tika.Tika;
+import org.superbiz.moviefun.blobstore.Blob;
+import org.superbiz.moviefun.blobstore.BlobStore;
 
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -40,9 +42,9 @@ public class S3Store implements BlobStore {
         byte[] bytes = IOUtils.toByteArray(content);
 
         return Optional.of(new Blob(
-            name,
-            new ByteArrayInputStream(bytes),
-            tika.detect(bytes)
+                name,
+                new ByteArrayInputStream(bytes),
+                tika.detect(bytes)
         ));
     }
 }

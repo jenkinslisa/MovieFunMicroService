@@ -1,0 +1,4 @@
+albums:
+  url: http://album-service.jenkinslisa.cfapps.haas-69.pez.pivotal.io/albums
+movies:
+  url: http://movie-service.jenkinslisa.cfapps.haas-69.pez.pivotal.io/movies
